@@ -2,15 +2,12 @@ import React from "react";
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom"
 import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
-import "./style.css"
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
     <Router>
-      <div className="navbar">
-        <Link to="/">Dashboard</Link>
-        <Link to="/transactions">Transactions</Link>
-      </div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Dashboard />}/>
         <Route path="/transactions" element={<Transactions />}/>
