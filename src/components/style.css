@@ -114,3 +114,17 @@
     background-color: grey;
 
 }
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .filter select {
+    padding: 8px 12px;
+    border-radius: 7px;
+    border: 1px solid rgba(78, 10, 10, 0.39);
+    font-size: 14px;
+    background-color: rgb(84, 136, 182);
+    cursor: pointer;
+
+  }
