@@ -20,8 +20,8 @@ const Transactions = () => {
         .sort((a, b) => {
             if (sortOrder === "amountAsc") return a.amount - b.amount;
             if (sortOrder === "amountDesc") return b.amount - a.amount;
-            if (sortOrder === "dateAsc") return new Date(a.date) - new Date(b.date);
-            if (sortOrder === "dateDesc") return new Date(b.date) - new Date(a.date);
+            if (sortOrder === "dateAsc") return new Date(a.date || 0) - new Date(b.date || 0);
+            if (sortOrder === "dateDesc") return new Date(b.date || 0) - new Date(a.date || 0);
             return 0;
         });
 

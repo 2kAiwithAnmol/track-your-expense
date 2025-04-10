@@ -13,8 +13,9 @@ const AddTransactionForm = ({onAdd}) => {
         id: Date.now(),
         name,
         amount: parseFloat(amount),
-        date
+        date: new Date(date).toISOString()
     };
+    
 
     onAdd(newTransaction);
     setName("");
