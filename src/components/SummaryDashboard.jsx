@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { TransactionContext } from "../Context/TransactionContext";
+import { TransactionContext } from "../context/TransactionContext";
 import "./style.css"
 
 const SummaryDashboard = () => {

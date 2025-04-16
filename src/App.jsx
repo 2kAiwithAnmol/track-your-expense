@@ -3,7 +3,7 @@ import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom"
 import Dashboard from "./pages/Dashboard";
 import Transactions from "./pages/Transactions";
 import Navbar from "./components/Navbar";
-import { TransactionProvider } from "./Context/TransactionContext";
+import { TransactionProvider } from "./context/TransactionContext";
 
 
 const App = () => {

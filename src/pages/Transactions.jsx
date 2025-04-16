@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import TransactionCard from "../components/TransactionCard";
 import AddTransactionForm from "../components/AddTransactionForm";
 import { useContext } from "react";
-import { TransactionContext } from "../Context/TransactionContext";
+import { TransactionContext } from "../context/TransactionContext";
 
 
 
