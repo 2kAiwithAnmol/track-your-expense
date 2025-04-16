@@ -5,6 +5,7 @@ import Transactions from "./pages/Transactions";
 import Navbar from "./components/Navbar";
 import { TransactionProvider } from "./Context/TransactionContext";
 
+
 const App = () => {
   return (
     <TransactionProvider>
