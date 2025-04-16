@@ -185,7 +185,7 @@
 h2 {
     font-size: 1.75rem;
     font-weight: bold;
-    color: #333;
+    color: rgb(34, 141, 228);
 }
 
 
@@ -195,39 +195,52 @@ h2 {
     gap: 1.5rem;
 }
 .reset-button {
-    background-color: #e53e3e; 
+    background-color: #e53e3e;
     color: white;
-    padding: 12px 32px; 
-    border-radius: 12px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    font-size: 16px; 
-    font-weight: 600; 
-    transition: all 0.3s ease-in-out; 
-    position: absolute; 
-    top: 550px; 
-    right: 600px; 
-    cursor: pointer; 
-}
-
-.reset-button:hover {
+    padding: 12px 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s ease, background-color 0.3s ease, box-shadow 0.2s ease;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    border: none;
+  }
+  
+  .reset-button:hover {
     background-color: #c53030;
-    transform: scale(1.05); 
-}
-
-.reset-button:focus {
+    transform: translateX(-50%) scale(1.05); 
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  }
+  
+  .reset-button:active {
+    transform: translateX(-50%) scale(0.98); 
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .reset-button:focus {
     outline: none;
-    ring: 2px solid rgba(255, 0, 0, 0.5); 
-    ring-offset: 2px; 
-}
-
-
-.reset-button:hover {
-    background-color: #c53030; 
-    transform: scale(1.05); 
-}
-
-.reset-button:focus {
-    outline: none; 
-    ring: 2px solid rgba(255, 0, 0, 0.5); 
-    ring-offset: 2px; 
-}
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.5);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .reset-button {
+      bottom: 15px;
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .reset-button {
+      bottom: 10px;
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+  }
+  
