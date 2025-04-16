@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { TransactionContext } from "../Context/TransactionContext";
+import "./style.css"
 
 const SummaryDashboard = () => {
-    const { transactions } = useContext(TransactionContext);
+    const { transactions,  clearTransactions } = useContext(TransactionContext);
     console.log("Transactions in SummaryDashboard:", transactions);
 
     const income = transactions
@@ -14,6 +15,9 @@ const SummaryDashboard = () => {
         .reduce((acc, curr) => acc + Number(curr.amount), 0);
 
     const balance = income - expense;
+    const handleReset = () => {
+        clearTransactions();
+    };
 
     return (
         <div className="p-4 bg-white rounded-xl shadow-md mt-6">
@@ -37,6 +41,12 @@ const SummaryDashboard = () => {
                     <h3 className="text-2xl font-bold">₹ {balance}</h3>
                 </div>
             </div>
+            <button
+                onClick={handleReset}
+                className="reset-button"
+            >
+                Reset Data
+            </button>
         </div>
     );
 };

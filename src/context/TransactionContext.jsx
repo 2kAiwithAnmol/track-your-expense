@@ -21,8 +21,11 @@ export const TransactionProvider = ({children}) => {
     const addTransaction = (newTransaction) => {
         setTransactions([newTransaction, ...transactions])
     }
+    const clearTransactions = () => {
+      setTransactions([]);
+  };
     
     return (
-        <TransactionContext.Provider value = {{transactions, addTransaction}}>{children}</TransactionContext.Provider>
+        <TransactionContext.Provider value = {{transactions, addTransaction,  clearTransactions}}>{children}</TransactionContext.Provider>
     );
 };

@@ -10,7 +10,7 @@ const AddTransactionForm = ({ onAdd }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-       
+
         let formIsValid = true;
         let errors = { name: false, amount: false, date: false, type: false };
 
@@ -36,12 +36,12 @@ const AddTransactionForm = ({ onAdd }) => {
             return;
         }
 
-        
+
         const newTransaction = {
             id: Date.now(),
             name,
             amount: parseFloat(amount),
-            date: date,  
+            date: date,
             type,
         };
 
@@ -49,7 +49,14 @@ const AddTransactionForm = ({ onAdd }) => {
 
         onAdd(newTransaction);
 
-        
+
+        setName("");
+        setAmount("");
+        setDate("");
+        setType("income");
+        setError({ name: false, amount: false, date: false, type: false });
+    };
+    const handleReset = () => {
         setName("");
         setAmount("");
         setDate("");
@@ -96,10 +103,17 @@ const AddTransactionForm = ({ onAdd }) => {
                 <option value="income">Income</option>
                 <option value="expense">Expense</option>
             </select>
-            <button 
-                type="submit"  
+            <button
+                type="submit"
                 className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all duration-200"
                 disabled={Object.values(error).includes(true)}>Add Transaction</button>
+
+            <button
+                type="button"
+                onClick={handleReset}
+                className="bg-red-500 text-white px-6 py-2 rounded-md hover:bg-red-700 mt-4 transition-all duration-200">
+                Reset Form
+            </button>
         </form>
     );
 };
